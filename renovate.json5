@@ -1,0 +1,27 @@
+{
+  extends: [
+    ":separateMajorReleases",
+    ":combinePatchMinorReleases",
+    ":ignoreUnstable",
+    ":prImmediately",
+    ":semanticPrefixFixDepsChoreOthers",
+    ":automergeDisabled",
+    ":disablePeerDependencies",
+    ":maintainLockFilesDisabled",
+    ":disableRateLimiting",
+    ":label(topic: automation)",
+    ":ignoreModulesAndTests",
+    ":enableVulnerabilityAlerts",
+  ],
+  major: {
+    dependencyDashboardApproval: true,
+  },
+  dependencyDashboard: true,
+  rangeStrategy: "bump",
+  bumpVersion: null,
+  prHourlyLimit: 0,
+  stabilityDays: 2,
+  postUpdateOptions: ["yarnDedupeHighest"],
+  timezone: "GMT",
+  schedule: ["before 7am on the first day of the month"],
+}
